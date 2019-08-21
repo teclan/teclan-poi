@@ -1,8 +1,10 @@
 package com.teclan.word;
 
 import org.apache.poi.hwpf.usermodel.Paragraph;
+import org.apache.poi.hwpf.usermodel.Table;
 import org.apache.poi.hwpf.usermodel.TableCell;
 import org.apache.poi.hwpf.usermodel.TableRow;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.slf4j.Logger;
@@ -14,7 +16,7 @@ public class DefaultWordTableRowHandler implements WordTableRowHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(DefaultWordTableRowHandler.class);
 
 
-    public void handler(int index,XWPFTableRow row) {
+    public void handle(int index, XWPFTableRow row) {
         List<XWPFTableCell> cells = row.getTableCells();
         StringBuffer sb = new StringBuffer();
         for (int j = 0; j < cells.size(); j++) {
@@ -25,7 +27,7 @@ public class DefaultWordTableRowHandler implements WordTableRowHandler {
         LOGGER.info("行号：{}，内容：{}",index,sb.toString());
     }
 
-    public void handler(int index,TableRow row) {
+    public void handle(int index, TableRow row) {
 
         StringBuffer sb = new StringBuffer();
 
@@ -44,6 +46,25 @@ public class DefaultWordTableRowHandler implements WordTableRowHandler {
         }
 
         LOGGER.info("行号：{}，内容：{}",index,sb.toString());
+
+    }
+
+    public void handle(int index, XWPFTable table) {
+
+        List<XWPFTableRow> rows = table.getRows();
+        //读取每一行数据
+        for (int i = 0; i < rows.size(); i++) {
+            XWPFTableRow  row = rows.get(i);
+            this.handle(index,row);
+        }
+    }
+
+    public void handle(int index, Table table) {
+
+        for (int i = 0; i < table.numRows(); i++) {
+            TableRow row = table.getRow(i);
+           this.handle(index,row);
+        }
 
     }
 }

@@ -12,7 +12,7 @@ public class Main {
 
         WordTableRowHandler handler = new DefaultWordTableRowHandler();
 
-        WorlUtils.readTable(filePath,handler);
+        WorlUtils.readTableByRow(filePath,handler);
 
 
     }

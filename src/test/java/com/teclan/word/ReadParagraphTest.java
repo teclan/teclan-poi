@@ -12,6 +12,5 @@ public class ReadParagraphTest {
         String filePath="C:\\Users\\teclan\\Desktop\\luquan\\务工人员花名册（新）.doc";
 
         WorlUtils.readText(filePath,new DefaultWordTextHandler());
-
     }
 }
