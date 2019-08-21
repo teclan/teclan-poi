@@ -6,7 +6,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 
-public interface WordTableRowHandler {
+public interface WordTableHandler {
 
     public void handle(int index, XWPFTableRow row);
 

@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public class DefaultWordTableRowHandler implements WordTableRowHandler {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultWordTableRowHandler.class);
+public class DefaultWordTableHandler implements WordTableHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultWordTableHandler.class);
 
 
     public void handle(int index, XWPFTableRow row) {

@@ -19,7 +19,7 @@ import java.util.List;
 public class WorlUtils {
     private static final Logger LOGGER = LoggerFactory.getLogger(WorlUtils.class);
 
-    public static void readTableByRow(String filePath,WordTableRowHandler handler){
+    public static void readTableByRow(String filePath, WordTableHandler handler){
         try{
             FileInputStream in = new FileInputStream(filePath);//载入文档
             // 处理docx格式 即office2007以后版本
@@ -68,7 +68,7 @@ public class WorlUtils {
     }
 
 
-    public static void readTable(String filePath,WordTableRowHandler handler){
+    public static void readTable(String filePath, WordTableHandler handler){
         try{
             FileInputStream in = new FileInputStream(filePath);//载入文档
             // 处理docx格式 即office2007以后版本
