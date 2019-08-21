@@ -1,8 +1,11 @@
 package com.teclan.word;
 
+import org.apache.poi.POIXMLProperties;
 import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.hwpf.usermodel.*;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
@@ -11,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
@@ -63,5 +68,23 @@ public class WorlUtils {
         }catch(Exception e){
             LOGGER.error(e.getMessage(),e);
         }
+    }
+
+    public static void readText(String filePath,WordTextHandler handler) throws IOException {
+
+        InputStream is = new FileInputStream(filePath);
+        WordExtractor ex = new WordExtractor(is);
+
+        String text = ex.getText();
+
+        if (is != null) {
+            try {
+                is.close();
+            } catch (IOException e) {
+                LOGGER.error(e.getMessage(),e);
+            }
+        }
+
+        handler.handler(text);
     }
 }
