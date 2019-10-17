@@ -1,4 +1,4 @@
-package com.teclan.excel;
+package com.teclan.poi.excel;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

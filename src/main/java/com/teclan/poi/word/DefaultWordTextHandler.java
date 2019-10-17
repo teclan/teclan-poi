@@ -1,4 +1,4 @@
-package com.teclan.word;
+package com.teclan.poi.word;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

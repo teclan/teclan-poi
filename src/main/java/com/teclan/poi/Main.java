@@ -1,8 +1,8 @@
-package com.teclan;
+package com.teclan.poi;
 
-import com.teclan.word.DefaultWordTableHandler;
-import com.teclan.word.WordTableHandler;
-import com.teclan.word.WorlUtils;
+import com.teclan.poi.word.DefaultWordTableHandler;
+import com.teclan.poi.word.WordTableHandler;
+import com.teclan.poi.word.WorlUtils;
 
 public class Main {
 

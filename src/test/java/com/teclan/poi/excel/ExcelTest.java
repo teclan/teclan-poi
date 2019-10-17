@@ -1,4 +1,4 @@
-package com.teclan.excel;
+package com.teclan.poi.excel;
 
 import org.junit.Test;
 

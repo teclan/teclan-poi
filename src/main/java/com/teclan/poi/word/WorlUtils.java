@@ -1,4 +1,4 @@
-package com.teclan.word;
+package com.teclan.poi.word;
 
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;

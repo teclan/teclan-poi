@@ -1,7 +1,6 @@
-package com.teclan.excel;
+package com.teclan.poi.excel;
 
-import com.teclan.utils.Objects;
-import com.teclan.word.DefaultWordTableHandler;
+import com.teclan.poi.utils.Objects;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

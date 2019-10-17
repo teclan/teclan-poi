@@ -1,4 +1,4 @@
-package com.teclan.word;
+package com.teclan.poi.word;
 
 import org.apache.poi.hwpf.usermodel.Table;
 import org.apache.poi.hwpf.usermodel.TableRow;

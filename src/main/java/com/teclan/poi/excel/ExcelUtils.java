@@ -1,4 +1,4 @@
-package com.teclan.excel;
+package com.teclan.poi.excel;
 
 import java.io.*;
 
@@ -6,11 +6,7 @@ import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import com.teclan.utils.Objects;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import com.teclan.poi.utils.Objects;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -312,8 +308,12 @@ public class ExcelUtils {
             return "";
         }
 
-        BigDecimal bd = new BigDecimal(cell.getNumericCellValue());
-        return bd.toPlainString();
+        try {
+            BigDecimal bd = new BigDecimal(cell.getNumericCellValue());
+            return bd.toPlainString();
+        }catch (Exception e){
+            return getValue(cell);
+        }
     }
 
 }
