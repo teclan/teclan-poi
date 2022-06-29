@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <POI.VERSION>3.17</POI.VERSION>
+        <POI.VERSION>4.1.1</POI.VERSION>
     </properties>
 
     <dependencies>
